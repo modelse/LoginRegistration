@@ -1,0 +1,55 @@
+
+@model loginReg.Models.User
+    <h1>Login</h1>
+      <form asp-controller="Users" asp-action="Login" method="post">
+            <div>
+            <label asp-for="email"></label>
+            <input asp-for="email"/>
+            <span asp-validation-for="email"></span>
+        </div>
+        <div>
+            <label asp-for="password"></label>
+            <input asp-for="password"/>
+            <span asp-validation-for="password"></span>
+        </div>
+        <button type="submit">Login</button>
+        </form>
+
+        @{
+        foreach(var error in ViewBag.Errors)
+            {  
+                @error
+            }
+         }
+
+    <h1>Registration</h1>
+    <form asp-controller="Users" asp-action="Register" method="post">
+        <div>
+            <label asp-for="first"></label>
+            <input asp-for="first"/>
+            <span asp-validation-for="first"></span>
+        </div>
+        <div>
+            <label asp-for="last"></label>
+            <input asp-for="last"/>
+            <span asp-validation-for="last"></span>
+        </div>
+        <div>
+            <label asp-for="email"></label>
+            <input asp-for="email"/>
+            <span asp-validation-for="email"></span>
+        </div>
+        <div>
+            <label asp-for="password"></label>
+            <input asp-for="password"/>
+            <span asp-validation-for="password"></span>
+        </div>
+        <div>
+            <label asp-for="passwordCon"></label>
+            <input asp-for="passwordCon"/>
+            <span asp-validation-for="passwordCon"></span>
+        </div>
+        <button type="submit">Registration</button>
+        
+    </form>
+    
